@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Result</title>
+    <style>
+        /* Set the background image for the entire page */
+        body {
+            background-image: url("/static/BLACK&WHITE-BG.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the visualization */
+        .visualization-container {
+            padding: 20px;
+        }
+
+        /* Set the visualization background to transparent */
+        .visualization {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Title styling */
+        h1 {
+            text-align: center;
+            color: #000;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #fff; /* Add white outline */
+        }
+
+        /* Link styling */
+        a {
+            color: #fff;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 30px;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization Result</h1>
+    <div class="visualization-container">
+        <div class="visualization">
+            <!-- The Plotly visualization will be inserted here -->
+            {{ visualization | safe }}
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2023 ARITTRA BAG. All rights reserved.
+    </div>
+</body>
+</html>

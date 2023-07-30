@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Web App</title>
+    <style>
+        /* Set video as the background */
+        #video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            background-color: #000; /* Fallback background color */
+        }
+
+        /* Transparent hovering box container */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+            color: #fff;
+        }
+
+        /* Modern button styles */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #4285F4;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #3367D6;
+            transform: scale(1.05);
+        }
+
+        /* Rest of the content styling */
+        .content-container {
+            padding: 20px;
+            color: #fff;
+        }
+
+        /* Remove padding and margin from body and html */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <video autoplay loop muted playsinline id="video-bg">
+        <source src="/static/bg.mp4" type="video/mp4">
+        <!-- Add more source tags for other video formats if needed -->
+    </video>
+
+    <!-- Transparent hovering box -->
+    <div class="container">
+        <!-- Main content -->
+        <div class="content-container">
+            <h1>Data Visualization Web App</h1>
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <form method="post" action="/upload" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv">
+                <div class="btn-container">
+                    <button class="btn" name="visualization_type" value="bar">Bar Chart</button>
+                    <button class="btn" name="visualization_type" value="pie">Pie Chart</button>
+                    <button class="btn" name="visualization_type" value="scatter">Scatter Plot</button>
+                    <button class="btn" name="visualization_type" value="line">Line Graph</button>
+                    <button class="btn" name="visualization_type" value="correlation">Correlation Matrix</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
