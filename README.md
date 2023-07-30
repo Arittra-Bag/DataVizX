@@ -47,3 +47,5 @@ Contributions to DataVizX are welcome! If you have any ideas for improvements or
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+# Note: The DataVizX project is a fictional example created for demonstration purposes and does not represent an actual functioning web app.
